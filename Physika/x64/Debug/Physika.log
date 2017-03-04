@@ -6,5 +6,4 @@ d:\userfiles\desktop\ict289\physika\physika\main.cpp(589): warning C4838: conver
 d:\userfiles\desktop\ict289\physika\physika\main.cpp(589): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
 d:\userfiles\desktop\ict289\physika\physika\main.cpp(607): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 d:\userfiles\desktop\ict289\physika\physika\main.cpp(609): warning C4305: 'argument': truncation from 'double' to 'float'
-d:\userfiles\desktop\ict289\physika\physika\main.cpp(610): warning C4305: 'argument': truncation from 'double' to 'float'
   Physika.vcxproj -> D:\UserFiles\Desktop\ICT289\Physika\x64\Debug\Physika.exe

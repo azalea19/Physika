@@ -6,10 +6,9 @@ main.cpp(589): warning C4838: conversion from 'double' to 'GLfloat' requires a n
 main.cpp(589): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
 main.cpp(607): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 main.cpp(609): warning C4305: 'argument': truncation from 'double' to 'float'
-main.cpp(610): warning C4305: 'argument': truncation from 'double' to 'float'
   Generating code
   9 of 207 functions ( 4.3%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+    2 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Physika.vcxproj -> D:\UserFiles\Desktop\ICT289\Physika\x64\Release\Physika.exe

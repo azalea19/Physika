@@ -157,7 +157,7 @@ History:
 
 
 /* Some physics constants */
-#define DAMPING 0.01 // how much to damp the cloth simulation each frame
+#define DAMPING 0.001 // how much to damp the cloth simulation each frame
 #define TIME_STEPSIZE2 0.5*0.5 // how large time step each particle takes each frame
 #define CONSTRAINT_ITERATIONS 15 // how many iterations of constraint satisfaction each frame (more is rigid, less is soft)
 
@@ -309,7 +309,7 @@ public:
     p1->offsetPos(correctionVectorHalf); // correctionVectorHalf is pointing from p1 to p2, so the length should move p1 half the length needed to satisfy the constraint.
     p2->offsetPos(-correctionVectorHalf); // we must move p2 the negative direction of correctionVectorHalf since it points from p2 to p1, and not p1 to p2.	
   }
-
+  
 };
 
 class Cloth
@@ -321,7 +321,7 @@ private:
                             // total number of particles is num_particles_width*num_particles_height
 
   std::vector<Particle> particles; // all particles that are part of this cloth
-  std::vector<Constraint> constraints; // alle constraints between particles as part of this cloth
+  std::vector<Constraint> constraints; // all constraints between particles as part of this cloth
 
   Particle* getParticle(int x, int y) { return &particles[y*num_particles_width + x]; }
   void makeConstraint(Particle *p1, Particle *p2) { constraints.push_back(Constraint(p1, p2)); }
@@ -389,6 +389,7 @@ public:
       }
     }
 
+    //Diagonal distance is sqrt(2) away
     // Connecting immediate neighbor particles with constraints (distance 1 and sqrt(2) in the grid)
     for (int x = 0; x<num_particles_width; x++)
     {
@@ -555,10 +556,9 @@ public:
 
 
 // Just below are three global variables holding the actual animated stuff; Cloth and Ball 
-Cloth cloth1(14, 10, 55, 45); // one Cloth object of the Cloth class
-Vec3 ball_pos(7, -5, 0); // the center of our one ball
+Cloth cloth1(20,20, 60, 65); // one Cloth object of the Cloth class
+Vec3 ball_pos(7, -5, 0); // the center of our one ball88
 float ball_radius = 2; // the radius of our one ball
-
 
 
                        /***** Below are functions Init(), display(), reshape(), keyboard(), arrow_keys(), main() *****/
@@ -606,8 +606,8 @@ void display(void)
   ball_time++;
   ball_pos.f[2] = cos(ball_time / 50.0) * 7;
 
-  cloth1.addForce(Vec3(0, -0.2, 0)*TIME_STEPSIZE2); // add gravity each frame, pointing down
-  cloth1.windForce(Vec3(0.5, 0, 0.2)*TIME_STEPSIZE2); // generate some wind each frame
+  cloth1.addForce(Vec3(0, -0.01, 0)*TIME_STEPSIZE2); // add gravity each frame, pointing down
+  cloth1.windForce(Vec3(0, 0, 0)*TIME_STEPSIZE2); // generate some wind each frame
   cloth1.timeStep(); // calculate the particle positions of the next frame
   cloth1.ballCollision(ball_pos, ball_radius); // resolve collision with the ball
 
