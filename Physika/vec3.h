@@ -2,28 +2,24 @@
 #define vec3_h__
 
 
+/*******************************************************************************************************************************
+* @file vec3.h
+* @author Matt Smooker
+* @date S1, 2017
+* @brief This vec3 class contains all of the functions related to the vec3 structure.
+* @description 
+*
+*******************************************************************************************************************************/
+
 typedef struct vec3
 {
   float x, y, z;
 }vec3;
 
-//The const* ensure the vector data is not modified
-//The additional const ensures the vector pointer is not modified
-//Preventing potential memory corruption within the function
-//the const modifier applies to the thing to its immediate left
 
-//Used like a constructor to initialize a vec3 pointer
-//Pass the address (**) to allocate space
-//Example:
-//vec3* somevec;
-//vec3_Create(&somevec);
 void vec3_Create(vec3** const a_vectorPointer);
 
 
-//This function can be called to initialize a
-//vector on the stack
-//vec3 somevec;
-//vec3_Init(&somevec);
 void vec3_Init(vec3* const a_vector);
 
 

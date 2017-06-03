@@ -1,8 +1,9 @@
-﻿  main.c
+﻿  main.cpp
+C:\Users\kmaxfield\Desktop\Physika\GLUI\include\GL/glui.h(880): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
   Generating code
-  9 of 39 functions (23.1%) were compiled, the rest were copied from previous compilation.
+  52 of 460 functions (11.3%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+    26 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  Physika.vcxproj -> D:\UserFiles\Desktop\Physika\x64\Release\Physika.exe
-  Physika.vcxproj -> D:\UserFiles\Desktop\Physika\x64\Release\Physika.pdb (Full PDB)
+  Physika.vcxproj -> C:\Users\kmaxfield\Desktop\Physika\x64\Release\Physika.exe
+  Physika.vcxproj -> C:\Users\kmaxfield\Desktop\Physika\x64\Release\Physika.pdb (Full PDB)

@@ -1,2 +1,9 @@
-﻿  Physika.vcxproj -> D:\UserFiles\Desktop\Physika\x64\Debug\Physika.exe
-  Physika.vcxproj -> D:\UserFiles\Desktop\Physika\x64\Debug\Physika.pdb (Full PDB)
+﻿  vec3.c
+  Particle.c
+  main.c
+  Constraint.c
+  Generating Code...
+  Source.cpp
+  LINK : C:\Users\kmaxfield\Desktop\Physika\x64\Debug\Physika.exe not found or not built by the last incremental link; performing full link
+  Physika.vcxproj -> C:\Users\kmaxfield\Desktop\Physika\x64\Debug\Physika.exe
+  Physika.vcxproj -> C:\Users\kmaxfield\Desktop\Physika\x64\Debug\Physika.pdb (Full PDB)

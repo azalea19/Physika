@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F45305F1-E0F3-4F9B-ADEE-6052AE001A86}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>GLUI</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>glui32</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>glui32</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>glui32</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetName>glui32</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\algebra3.cpp" />
+    <ClCompile Include="source\arcball.cpp" />
+    <ClCompile Include="source\glui.cpp" />
+    <ClCompile Include="source\glui_add_controls.cpp" />
+    <ClCompile Include="source\glui_bitmaps.cpp" />
+    <ClCompile Include="source\glui_bitmap_img_data.cpp" />
+    <ClCompile Include="source\glui_button.cpp" />
+    <ClCompile Include="source\glui_checkbox.cpp" />
+    <ClCompile Include="source\glui_column.cpp" />
+    <ClCompile Include="source\glui_commandline.cpp" />
+    <ClCompile Include="source\glui_control.cpp" />
+    <ClCompile Include="source\glui_edittext.cpp" />
+    <ClCompile Include="source\glui_filebrowser.cpp" />
+    <ClCompile Include="source\glui_img_checkbox_0.c" />
+    <ClCompile Include="source\glui_img_checkbox_0_dis.c" />
+    <ClCompile Include="source\glui_img_checkbox_1.c" />
+    <ClCompile Include="source\glui_img_checkbox_1_dis.c" />
+    <ClCompile Include="source\glui_img_downarrow.c" />
+    <ClCompile Include="source\glui_img_leftarrow.c" />
+    <ClCompile Include="source\glui_img_listbox_down.c" />
+    <ClCompile Include="source\glui_img_listbox_up.c" />
+    <ClCompile Include="source\glui_img_listbox_up_dis.c" />
+    <ClCompile Include="source\glui_img_radiobutton_0.c" />
+    <ClCompile Include="source\glui_img_radiobutton_0_dis.c" />
+    <ClCompile Include="source\glui_img_radiobutton_1.c" />
+    <ClCompile Include="source\glui_img_radiobutton_1_dis.c" />
+    <ClCompile Include="source\glui_img_rightarrow.c" />
+    <ClCompile Include="source\glui_img_spindown_0.c" />
+    <ClCompile Include="source\glui_img_spindown_1.c" />
+    <ClCompile Include="source\glui_img_spindown_dis.c" />
+    <ClCompile Include="source\glui_img_spinup_0.c" />
+    <ClCompile Include="source\glui_img_spinup_1.c" />
+    <ClCompile Include="source\glui_img_spinup_dis.c" />
+    <ClCompile Include="source\glui_img_uparrow.c" />
+    <ClCompile Include="source\glui_list.cpp" />
+    <ClCompile Include="source\glui_listbox.cpp" />
+    <ClCompile Include="source\glui_mouse_iaction.cpp" />
+    <ClCompile Include="source\glui_node.cpp" />
+    <ClCompile Include="source\glui_panel.cpp" />
+    <ClCompile Include="source\glui_radio.cpp" />
+    <ClCompile Include="source\glui_rollout.cpp" />
+    <ClCompile Include="source\glui_rotation.cpp" />
+    <ClCompile Include="source\glui_scrollbar.cpp" />
+    <ClCompile Include="source\glui_separator.cpp" />
+    <ClCompile Include="source\glui_spinner.cpp" />
+    <ClCompile Include="source\glui_statictext.cpp" />
+    <ClCompile Include="source\glui_string.cpp" />
+    <ClCompile Include="source\glui_textbox.cpp" />
+    <ClCompile Include="source\glui_translation.cpp" />
+    <ClCompile Include="source\glui_tree.cpp" />
+    <ClCompile Include="source\glui_treepanel.cpp" />
+    <ClCompile Include="source\glui_window.cpp" />
+    <ClCompile Include="source\quaternion.cpp" />
+    <ClCompile Include="source\viewmodel.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\algebra3.h" />
+    <ClInclude Include="source\arcball.h" />
+    <ClInclude Include="source\glui_internal.h" />
+    <ClInclude Include="source\glui_internal_control.h" />
+    <ClInclude Include="source\quaternion.h" />
+    <ClInclude Include="source\viewmodel.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="source\glui_img_listbox_down.ppm" />
+    <None Include="source\glui_img_listbox_up.ppm" />
+    <None Include="source\glui_img_listbox_up_dis.ppm" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
