@@ -18,22 +18,19 @@ void vec3_Create(vec3** const a_vectorPointer)
 
 float vec3_Magnitude(vec3 a_vector)
 {
-  return sqrt(a_vector.x*a_vector.x + a_vector.y*a_vector.y + a_vector.z*a_vector.z);
+  return (float)sqrt(a_vector.x*a_vector.x + a_vector.y*a_vector.y + a_vector.z*a_vector.z);
 }
 
 vec3 vec3_Normalize(vec3 a_vector)
 {
-  vec3 normalised;
-  vec3_Init(&normalised);
-
   float length;
   length = vec3_Magnitude(a_vector);
 
-  normalised.x /= length;
-  normalised.y /= length;
-  normalised.z /= length;
+  a_vector.x /= length;
+  a_vector.y /= length;
+  a_vector.z /= length;
 
-  return normalised;
+  return a_vector;
 }
 
 vec3 vec3_Add(vec3 a_vector1, vec3 a_vector2)
@@ -86,24 +83,16 @@ vec3 vec3_Cross(vec3 a_vector1, vec3 a_vector2)
 
 vec3 vec3_Multiply(vec3 a_vector, float constant)
 {
-  vec3 product;
-  vec3_Init(&product);
-
-  product.x *= constant;
-  product.y *= constant;
-  product.z *= constant;
-
-  return product;
+  a_vector.x *= constant;
+  a_vector.y *= constant;
+  a_vector.z *= constant;
+  return a_vector;
 }
 
 vec3 vec3_Divide(vec3 a_vector, float constant)
 {
-  vec3 product;
-  vec3_Init(&product);
-
-  product.x /= constant;
-  product.y /= constant;
-  product.z /= constant;
-
-  return product;
+  a_vector.x /= constant;
+  a_vector.y /= constant;
+  a_vector.z /= constant;
+  return a_vector;
 }

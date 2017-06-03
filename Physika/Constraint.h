@@ -15,7 +15,8 @@ typedef struct Constraint
 
 void constraint_Init(Constraint* const constraint);
 
-void constraint_Satisfy(Particle* const p1, Particle* const p2);
+void constraint_Satisfy(Constraint* const constraint);
 
+Constraint constraint_Make(Particle* p1, Particle* p2, float restDistance);
 
 #endif // Constraint_h__

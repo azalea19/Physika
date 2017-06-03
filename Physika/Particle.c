@@ -1,4 +1,5 @@
 #include "Particle.h"
+#include <malloc.h>
 
 
 
@@ -12,7 +13,7 @@ void particle_Init(Particle* const a_particle)
   a_particle->old_pos.y = 0;
   a_particle->old_pos.z = 0;
 
-  particle_ResetAcceleration(a_particle->acceleration);
+  particle_ResetAcceleration(&(a_particle->acceleration));
 
   a_particle->accumulated_normal.x = 0;
   a_particle->accumulated_normal.y = 0;
@@ -30,8 +31,9 @@ void particle_Create(Particle** const a_particlePointer)
 
 void particle_AddForce(Particle* const a_particle, vec3 a_vector)
 {
-  vec3_Add(a_particle->acceleration, vec3_Divide(a_vector, a_particle->mass));
+  a_particle->acceleration = vec3_Add(a_particle->acceleration, vec3_Divide(a_vector, a_particle->mass));
 }
+
 
 void particle_TimeStep(Particle* const a_particle, float dt, float last_dt, float damping)
 {
@@ -46,19 +48,24 @@ void particle_TimeStep(Particle* const a_particle, float dt, float last_dt, floa
     vec3 dampedVelocity = vec3_Multiply(normalisedVelocity, 1 - damping);
     vec3 ATSquared = vec3_Multiply(a_particle->acceleration, TIME_STEP2);
 
+    if (dampedVelocity.x != 0 || dampedVelocity.y != 0 || dampedVelocity.z != 0)
+    {
+      dampedVelocity = dampedVelocity;
+    }
     vec3 finalPos = vec3_Add(a_particle->pos, dampedVelocity);
     finalPos = vec3_Add(finalPos, ATSquared);
 
     a_particle->old_pos = temp;
-    particle_ResetAcceleration(a_particle->acceleration);
+    a_particle->pos = finalPos;
+    particle_ResetAcceleration(&(a_particle->acceleration));
   }
 }
 
-void particle_ResetAcceleration(vec3 a_vector)
+void particle_ResetAcceleration(vec3* a_vector)
 {
-  a_vector.x = 0;
-  a_vector.y = 0;
-  a_vector.z = 0;
+  a_vector->x = 0;
+  a_vector->y = 0;
+  a_vector->z = 0;
 }
 
 void particle_Move(Particle* const a_particle, vec3 a_vector)
@@ -75,4 +82,12 @@ void particle_Move(Particle* const a_particle, vec3 a_vector)
 void particle_MakeUnmoveable(Particle* const a_particle)
 {
   a_particle->moveable = false;
+}
+
+void particle_OffsetPosition(Particle* const a_particle, vec3 position)
+{
+  if (a_particle->moveable)
+  {
+    a_particle->pos = vec3_Add(a_particle->pos, position);
+  }
 }

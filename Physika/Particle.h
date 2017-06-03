@@ -38,7 +38,7 @@ void particle_AddForce(Particle* const a_particle, vec3 a_vector);
 void particle_TimeStep(Particle* const a_particle, float dt, float last_dt, float damping);
 
 
-void particle_ResetAcceleration(vec3 a_vector);
+void particle_ResetAcceleration(vec3* a_vector);
 
 
 void particle_Move(Particle* const a_particle, vec3 a_vector);
@@ -46,5 +46,7 @@ void particle_Move(Particle* const a_particle, vec3 a_vector);
 
 void particle_MakeUnmoveable(Particle* const a_particle);
 
+
+void particle_OffsetPosition(Particle* const a_particle, vec3 position);
 
 #endif // Particle_h__
